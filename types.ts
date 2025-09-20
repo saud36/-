@@ -10,7 +10,7 @@ export interface PersonalInfo {
 
 export interface SocialLink {
   id: string;
-  network: string;
+  network: 'LinkedIn' | 'GitHub' | 'Twitter' | 'Website';
   url: string;
 }
 
@@ -66,6 +66,25 @@ export interface CVData {
   languages: Language[];
   projects: Project[];
   customSections: CustomSection[];
+  sectionOrder: Array<keyof CVData['sectionTitles']>;
+  sectionTitles: {
+    summary: string;
+    experience: string;
+    education: string;
+    skills: string;
+    languages: string;
+    projects: string;
+  };
+  sectionVisibility: {
+    summary: boolean;
+    experience: boolean;
+    education: boolean;
+    skills: boolean;
+    languages: boolean;
+    projects: boolean;
+    socialLinks: boolean;
+    customSections: boolean;
+  };
 }
 
 
@@ -80,5 +99,7 @@ export interface ColorPalette {
 export interface ThemeSettings {
   color: ColorPalette;
   font: string;
-  template: 'modern' | 'classic';
+  template: 'modern' | 'classic' | 'creative' | 'compact';
+  skillDisplayStyle: 'bar' | 'dots' | 'tags';
+  sectionDividerStyle: 'solid' | 'dashed' | 'none';
 }

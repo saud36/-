@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Preview } from './components/Preview';
@@ -15,6 +16,8 @@ const App: React.FC = () => {
     color: THEMES[0].colors,
     font: FONTS[0].value,
     template: 'modern',
+    skillDisplayStyle: 'bar',
+    sectionDividerStyle: 'solid',
   });
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -25,7 +28,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('cv-theme');
     if (savedTheme) {
-      setTheme(JSON.parse(savedTheme));
+      setTheme(prev => ({ ...prev, ...JSON.parse(savedTheme) }));
     }
     const savedDarkMode = localStorage.getItem('cv-dark-mode');
     if (savedDarkMode) {

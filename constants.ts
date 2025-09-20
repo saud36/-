@@ -1,3 +1,4 @@
+
 import { CVData, ColorPalette } from './types';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -62,6 +63,25 @@ export const initialCVData: CVData = {
     },
   ],
   customSections: [],
+  sectionOrder: ['summary', 'experience', 'education', 'skills', 'languages', 'projects'],
+  sectionTitles: {
+    summary: 'Summary',
+    experience: 'Experience',
+    education: 'Education',
+    skills: 'Skills',
+    languages: 'Languages',
+    projects: 'Projects',
+  },
+  sectionVisibility: {
+    summary: true,
+    experience: true,
+    education: true,
+    skills: true,
+    languages: true,
+    projects: true,
+    socialLinks: true,
+    customSections: true,
+  },
 };
 
 export const initialCVDataAr: CVData = {
@@ -125,6 +145,25 @@ export const initialCVDataAr: CVData = {
     },
   ],
   customSections: [],
+  sectionOrder: ['summary', 'experience', 'education', 'skills', 'languages', 'projects'],
+  sectionTitles: {
+    summary: 'الملخص',
+    experience: 'الخبرة',
+    education: 'التعليم',
+    skills: 'المهارات',
+    languages: 'اللغات',
+    projects: 'المشاريع',
+  },
+  sectionVisibility: {
+    summary: true,
+    experience: true,
+    education: true,
+    skills: true,
+    languages: true,
+    projects: true,
+    socialLinks: true,
+    customSections: true,
+  },
 };
 
 
@@ -156,7 +195,30 @@ export const FONTS = [
   { name: 'Lora', value: 'lora' },
   { name: 'Roboto', value: 'roboto' },
   { name: 'Source Sans Pro', value: 'source-sans-pro' },
+  { name: 'Montserrat', value: 'montserrat' },
+  { name: 'Playfair Display', value: 'playfair-display' },
+  { name: 'Cairo (Arabic)', value: 'cairo' },
+  { name: 'Noto Sans (Arabic)', value: 'noto-sans-arabic' },
 ];
 
 export const LANGUAGE_PROFICIENCY = ['Beginner', 'Intermediate', 'Advanced', 'Fluent', 'Native'];
 export const LANGUAGE_PROFICIENCY_AR = ['مبتدئ', 'متوسط', 'متقدم', 'بطلاقة', 'لغة أم'];
+
+export const TEMPLATES = [
+  { value: 'modern', name: 'Modern' },
+  { value: 'classic', name: 'Classic' },
+  { value: 'creative', name: 'Creative' },
+  { value: 'compact', name: 'Compact' },
+];
+
+export const SKILL_STYLES = [
+  { value: 'bar', name: 'Bar' },
+  { value: 'dots', name: 'Dots' },
+  { value: 'tags', name: 'Tags' },
+];
+
+export const DIVIDER_STYLES = [
+  { value: 'solid', name: 'Solid' },
+  { value: 'dashed', name: 'Dashed' },
+  { value: 'none', name: 'None' },
+];
